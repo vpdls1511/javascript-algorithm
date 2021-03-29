@@ -24,12 +24,15 @@ const rl = readline.createInterface({
     output : process.stdout
 })
 
-const input = [];
+const solution = () =>{
 
+}
+
+const input = [];
 rl.on('line' , line => {
-    input.push(line.split(' '))
+    input.push(line)
 }).on('close', ()=>{
-    console.log(input)
+    solution(input)
     process.exit()
 })
 ```
