@@ -8,7 +8,9 @@ const stack = () => {
             console.log(i)
         },
         pop: () => {
-            i.splice(-1)
+            if(i.length >= 0){
+                i.splice(-1)
+            }
             console.log(i)
         },
         peek: () => {
@@ -34,5 +36,9 @@ stack().push()
 stack().push()
 stack().search(3)
 stack().pop()
+stack().pop()
+stack().pop()
+stack().pop()
+stack().push()
 stack().search(3)
 stack().peek()
