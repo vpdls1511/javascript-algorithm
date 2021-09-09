@@ -1,25 +1,25 @@
-const readline = require('readline')
+const readline = require('readline');
 const rl = readline.createInterface({
-    input : process.stdin,
-    output : process.stdout
-})
-
-const solution = (line) => {
-    const data = line;
-    let i = -1;
-    let n , m;
-    while(n !== 0 && m !== 0){
-        i++
-        n = parseInt(data[i][0]);
-        m = parseInt(data[i][2]);
-        if(n+m !== 0) console.log(`${n+m}`);
-    }
-}
-
-const input = [];
-rl.on('line' , line => {
+    input: process.stdin,
+    output: process.stdout,
+});
+const input = []
+rl.on('line', function (line) {
     input.push(line)
-}).on('close', ()=>{
-    solution(input);
+}).on('close', function () {
+    solution(input)
     process.exit();
-})
+});
+
+function solution(line) {
+    const lineData = line.toString().split(',')
+    let i = 0;
+    while(i < lineData.length){
+        const data = lineData[i].toString().split(' ').map(x => Number(x))
+        const n = data[0]
+        const m = data[1]
+        console.log(n+m)
+        i++
+    }
+    return 0;
+}
