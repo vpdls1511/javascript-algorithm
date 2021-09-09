@@ -10,7 +10,7 @@ const solution = (line) => {
     for(let i = 0 ; i < parseInt(data[0]) ; i++){
         let n = parseInt(data[i+1][0]);
         let m = parseInt(data[i+1][2]);
-        console.log(n+m);
+        console.log(`Case #${i+1}: ${n+m}`);
     }
 }
 
