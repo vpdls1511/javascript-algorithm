@@ -5,17 +5,11 @@ const rl = readline.createInterface({
 })
 
 const solution = (data) => {
-    const num = data.toString().split(' ')
-
-    const n = parseInt(num[0])
-    const m = parseInt(num[1])
-
-    if(n > m){
-        return '>'
-    }else if(n === m){
-        return '=='
-    }else if( n < m){
-        return '<'
+    const num = parseInt(data[0])
+    if(num % 4 === 0 && num%100 !== 0 || num%400 !== 0){
+        return 1;
+    }else{
+        return 0;
     }
 }
 
@@ -27,3 +21,6 @@ rl.on('line' , line => {
 
     process.exit();
 })
+
+/*
+*/
