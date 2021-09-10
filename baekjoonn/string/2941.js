@@ -1,23 +1,28 @@
+console.log('Wait to Input File')
 const input = require('fs').readFileSync('/dev/stdin').toString().trim()
 
-let time = 0
-for(let i of input){
-    time += getDialPosition(i) + 3
-}
-console.log(time)
+console.log(croatiaWord(input))
 
-function getDialPosition (targetText){
-    const dial = ['','ABC' , 'DEF' , 'GHI','JKL','MNO','PQRS','TUV','WXYZ']
+function croatiaWord (text) {
+    const changeWords = [ 'c=' , 'c-' , 'dz=' , 'd-' , 'lj' , 'nj' , 's=' , 'z=']
 
-    let cnt = -1 ;
-    let answer = 0;
-    dial.filter(doc => {
-        if(doc.indexOf(targetText) === -1){
-            cnt++;
-        }else{
-            answer = cnt
+    let word = text;
+    let i = 0;
+    let cnt = 0
+    while(true){
+        const target = changeWords[i]
+        while(true){
+            if(word.indexOf(target) !== -1){
+                word = word.replace(target,' ');
+                cnt++;
+            }else{
+                break;
+            }
         }
-    })
+        if(i >= changeWords.length) break;
+        i++
+    }
+    word = word.replace(/ /gi,'');
 
-    return answer
+    return cnt + word.length
 }
