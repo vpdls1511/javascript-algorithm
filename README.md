@@ -17,23 +17,11 @@ const inputData = parseInt(input[0])
 **readline**
 
 ```
-const readline = require('readline')
-const rl = readline.createInterface({
-    input : process.stdin,
-    output : process.stdout
-})
-
-const solution = () =>{
-
-}
-
-const input = [];
-rl.on('line' , line => {
-    input.push(line)
-}).on('close', ()=>{
-    solution(input)
-    process.exit()
-})
+let input = require("fs")
+  .readFileSync(process.platform === 'linux' ? '/dev/stdin' : '../../input.txt')
+  .toString()
+  .trim()
+  .split("\n").map(v => parseInt(v));
 ```
 
 ## [프로그래머스](https://github.com/vpdls1511/javascript-algoritm/tree/master/programmers/)
