@@ -3,19 +3,10 @@
 자바스크립트로 알고리즘 공부하기  
 
 ## [백준](https://github.com/vpdls1511/javascript-algoritm/tree/master/baekjoonn/)
-백준에서는 따로 입출력을 받을 코드를 작성해야한다.  
-fs 모듈을 이용하는 방법과 readline 모듈을 이용하는 방법이 있는데  
-더 빠른 처리를 위해 최근부터 fs 모듈을 사용하는 방법을 이용하기 시작했다.
+백준에서는 따로 입출력을 받을 코드를 작성해야한다.   
+fs 모듈의 `readFileSync` 를 이용해 input.txt의 값을 가져오면 편하게 할 수 있다.
 
-**fs**  
-```
-const input = require('fs').readFileSync('/dev/stdin/').toString().split(' ')
-
-const inputData = parseInt(input[0])
-```
-
-**readline**
-
+**fs**
 ```
 let input = require("fs")
   .readFileSync(process.platform === 'linux' ? '/dev/stdin' : '../../input.txt')
